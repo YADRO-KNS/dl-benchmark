@@ -214,7 +214,7 @@ def convert_to_saved_model(model_graph, input_names, output_names, saved_model_d
 
 def set_input_shapes(model, inputs):
     for i, _ in enumerate(inputs):
-        input_name = model.inputs[i].name
+        input_name = model.inputs[i].name.split(':0')[0]
         input_shape = inputs.get(input_name, None)
         if input_shape is None:
             input_shape = inputs.get(f'{input_name}:0', model.inputs[i].shape)
