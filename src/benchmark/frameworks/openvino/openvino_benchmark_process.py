@@ -90,7 +90,7 @@ class OpenVINOBenchmarkPythonProcess(OpenVINOBenchmarkProcess):
         iteration = self._test.indep_parameters.iteration
 
         arguments = f'-m {model_xml} -i {dataset} -b {batch} -d {device} -niter {iteration}'
-        arguments = self._add_perf_hint_for_cmd_line(arguments, self._perf_hint)
+        #arguments = self._add_perf_hint_for_cmd_line(arguments, self._perf_hint)
         arguments = self._add_common_arguments(arguments, device)
         command_line = f'benchmark_app {arguments}'
         return command_line
@@ -152,7 +152,7 @@ class OpenVINOBenchmarkCppProcess(OpenVINOBenchmarkProcess):
         arguments = (f'-m {model_xml} -i {dataset} -b {batch} -d {device} -niter {iteration} '
                      f'-report_type "no_counters" -json_stats -report_folder {self._report_path.parent.absolute()}')
 
-        arguments = self._add_perf_hint_for_cmd_line(arguments, self._perf_hint)
+        #arguments = self._add_perf_hint_for_cmd_line(arguments, self._perf_hint)
         arguments = self._add_common_arguments(arguments, device)
 
         command_line = f'{self._benchmark_path} {arguments}'
