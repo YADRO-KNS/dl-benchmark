@@ -12,7 +12,7 @@ The tool was tested on Ubuntu 20.04 (64-bit) with default GCC* 9.4.0
 ```
 git clone  https://github.com/microsoft/onnxruntime.git
 cd onnxruntime
-git checkout v1.13.1
+git checkout v1.14.0
 git submodule update --init --recursive
 ```
 2. Create `build` directory:
